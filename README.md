@@ -15,6 +15,8 @@ Live URL: https://vue-weather-application-62b4e.web.app
    
 3- Upcoming updates:
    * Improve the searchbar (clearing + animation)
+   * Including icons, logo
+   * Optomise the application
    * Improve the UI (implement SASS)
    * Implement Typescript
    * Unit coventer
