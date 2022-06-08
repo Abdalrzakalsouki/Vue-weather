@@ -13,7 +13,6 @@ Vue.js weather application
    * Boostrap 4
    
 3- Upcoming updates:
-   * Adding quick navgation button
    * Improve the UI (implement SASS)
    * Implement Typescript
    * Unit coventer
