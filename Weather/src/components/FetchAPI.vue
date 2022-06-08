@@ -17,9 +17,11 @@
       />
     </div>
 
-    <a href="#cites-section" class="go-dwon">
-      <i class="fas fa-angle-double-down fa-2x"></i>
-    </a>
+    <div v-if="display" class="go-down">
+      <a href="#cites">
+        <fa icon="angles-down" class="go-down-icon" />
+      </a>
+    </div>
 
     <div class="container" v-for="city in citiesList" :key="city.id">
       <div class="card" style="width: 18rem">
@@ -54,7 +56,7 @@
           "
           alt="Card image cap"
         />
-        <div class="card-body">
+        <div id="cites" class="card-body">
           <h4 class="card-title">{{ city.cityName }}, {{ city.country }}</h4>
           <p class="card-text">Tempareture: {{ city.tempTommorrow }}</p>
           <p class="card-text">State: {{ city.mainTommorrow }}</p>
@@ -83,6 +85,7 @@ export default {
       citiesList: [],
       defaultID: 1,
       isResponse: true,
+      display: false,
     };
   },
   created() {
@@ -136,6 +139,7 @@ export default {
         icon2: city.list[1].weather[0].icon,
       });
       this.defaultID++;
+      this.display = true;
     },
 
     removeCity(city) {
@@ -143,6 +147,9 @@ export default {
         this.citiesList = this.citiesList.filter((x) => {
           return x.id != city.id;
         });
+      }
+      if (this.citiesList.length === 1) {
+        this.display = false;
       }
     },
   },
@@ -194,5 +201,35 @@ main .search-bar {
   font-size: 14px;
   top: 10px;
   left: 5px;
+}
+
+.go-down {
+  display: block;
+  position: absolute;
+  font-size: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding-top: 20px;
+  transition: 0.3s;
+}
+
+.go-down-icon {
+  color: #212529;
+  animation: bouncing 1.5s infinite;
+}
+
+@keyframes bouncing {
+  0%,
+  10%,
+  20%,
+  50%,
+  80%,
+  100% {
+    transform: translateY(0);
+  }
+  40%,
+  60% {
+    transform: translateY(-15%);
+  }
 }
 </style>
