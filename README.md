@@ -1,5 +1,6 @@
 # Vue-weather
 Vue.js weather application
+Live URL: https://vue-weather-application-62b4e.web.app
 
 1 - Main features:
   * Weather data for 2 days
