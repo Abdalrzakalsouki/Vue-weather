@@ -14,6 +14,7 @@ Live URL: https://vue-weather-application-62b4e.web.app
    * Boostrap 4
    
 3- Upcoming updates:
+   * Improve the searchbar (clearing + animation)
    * Improve the UI (implement SASS)
    * Implement Typescript
    * Unit coventer
